@@ -1,4 +1,3 @@
-cat << 'EOF' > README.md
 # PivotFormer: Alternating-Axis Attention for Multivariate Time Series Forecasting
 
 Official implementation of **PivotFormer**, a lightweight channel-independent architecture for long-term multivariate time series forecasting.

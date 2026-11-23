@@ -1,0 +1,111 @@
+RETURNCODE: 0
+TIME: 6.5s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id PatchTST_national_illness_48_seed2 --model PatchTST --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/illness/ --data_path national_illness.csv --features M --target OT --freq w --embed fixed --seq_len 36 --pred_len 48 --label_len 18 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 3 --d_layers 1 --d_model 128 --d_ff 256 --n_heads 16 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 2 --itr 1 --des PatchTST_national_illness_48_seed2 --num_workers 0 --use_gpu --patch_len 16
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           PatchTST_national_illness_48_seed2Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/illness/
+  Data Path:          national_illness.csvFeatures:           M                   
+  Target:             OT                  Freq:               w                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            36                  Label Len:          18                  
+  Pred Len:           48                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            16                  e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                PatchTST_national_illness_48_seed2Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: PatchTST ...
+>>>>>>>start training : long_term_forecast_PatchTST_national_illness_48_seed2_PatchTST_custom_ftM_sl36_ll18_pl48_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_national_illness_48_seed2_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 593
+val 50
+test 146
+Epoch: 1 cost time: 0.5107698440551758
+Epoch: 1, Steps: 19 | Train Loss: 1.0512926 Vali Loss: 0.4541733 Test Loss: 3.3392729
+Validation loss decreased (inf --> 0.454173).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.17586040496826172
+Epoch: 2, Steps: 19 | Train Loss: 0.8980368 Vali Loss: 0.3617626 Test Loss: 2.8961913
+Validation loss decreased (0.454173 --> 0.361763).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.18495726585388184
+Epoch: 3, Steps: 19 | Train Loss: 0.8600244 Vali Loss: 0.3515543 Test Loss: 2.8352317
+Validation loss decreased (0.361763 --> 0.351554).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.16529631614685059
+Epoch: 4, Steps: 19 | Train Loss: 0.8440870 Vali Loss: 0.3493772 Test Loss: 2.8095925
+Validation loss decreased (0.351554 --> 0.349377).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.19279003143310547
+Epoch: 5, Steps: 19 | Train Loss: 0.8417546 Vali Loss: 0.3494290 Test Loss: 2.8048324
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.17468643188476562
+Epoch: 6, Steps: 19 | Train Loss: 0.8388447 Vali Loss: 0.3452248 Test Loss: 2.7933716
+Validation loss decreased (0.349377 --> 0.345225).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.1802997589111328
+Epoch: 7, Steps: 19 | Train Loss: 0.8324275 Vali Loss: 0.3505791 Test Loss: 2.7963619
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.1554887294769287
+Epoch: 8, Steps: 19 | Train Loss: 0.8237045 Vali Loss: 0.3451824 Test Loss: 2.7978333
+Validation loss decreased (0.345225 --> 0.345182).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.13822317123413086
+Epoch: 9, Steps: 19 | Train Loss: 0.8315840 Vali Loss: 0.3467202 Test Loss: 2.8022589
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.16911792755126953
+Epoch: 10, Steps: 19 | Train Loss: 0.8442227 Vali Loss: 0.3474271 Test Loss: 2.7960771
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 1.953125e-07
+Epoch: 11 cost time: 0.1888880729675293
+Epoch: 11, Steps: 19 | Train Loss: 0.8306501 Vali Loss: 0.3532890 Test Loss: 2.7942634
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 9.765625e-08
+Epoch: 12 cost time: 0.1883237361907959
+Epoch: 12, Steps: 19 | Train Loss: 0.8355306 Vali Loss: 0.3570148 Test Loss: 2.7940762
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 4.8828125e-08
+Epoch: 13 cost time: 0.17926716804504395
+Epoch: 13, Steps: 19 | Train Loss: 0.8349717 Vali Loss: 0.3554635 Test Loss: 2.7974522
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_PatchTST_national_illness_48_seed2_PatchTST_custom_ftM_sl36_ll18_pl48_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_national_illness_48_seed2_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 146
+test shape: (146, 48, 7) (146, 48, 7)
+test shape: (146, 48, 7) (146, 48, 7)
+mse:2.627319097518921, mae:1.0633362531661987, dtw:Not calculated
+
+--- STDERR ---
+

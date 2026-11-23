@@ -1,0 +1,101 @@
+RETURNCODE: 0
+TIME: 173.6s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id Crossformer_exchange_rate_720_seed4 --model Crossformer --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/exchange_rate/ --data_path exchange_rate.csv --features M --target OT --freq d --embed fixed --seq_len 96 --pred_len 720 --label_len 48 --enc_in 8 --dec_in 8 --c_out 8 --e_layers 3 --d_layers 1 --d_model 256 --d_ff 512 --n_heads 4 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 4 --itr 1 --des Crossformer_exchange_rate_720_seed4 --num_workers 0 --use_gpu --factor 10 --seg_len 6 --channel_independence 0
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           Crossformer_exchange_rate_720_seed4Model:              Crossformer         
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/exchange_rate/
+  Data Path:          exchange_rate.csv   Features:           M                   
+  Target:             OT                  Freq:               d                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           720                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             8                   Dec In:             8                   
+  C Out:              8                   d model:            256                 
+  n heads:            4                   e layers:           3                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             10                  
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                Crossformer_exchange_rate_720_seed4Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: Crossformer ...
+>>>>>>>start training : long_term_forecast_Crossformer_exchange_rate_720_seed4_Crossformer_custom_ftM_sl96_ll48_pl720_dm256_nh4_el3_dl1_df512_expand2_dc4_fc10_ebfixed_dtTrue_Crossformer_exchange_rate_720_seed4_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4496
+val 41
+test 798
+	iters: 100, epoch: 1 | loss: 0.6380891
+	speed: 0.1594s/iter; left time: 883.4801s
+Epoch: 1 cost time: 22.511229753494263
+Epoch: 1, Steps: 141 | Train Loss: 0.7214416 Vali Loss: 5.9949324 Test Loss: 2.3504557
+Validation loss decreased (inf --> 5.994932).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2927289
+	speed: 0.2422s/iter; left time: 1307.8899s
+Epoch: 2 cost time: 22.427218914031982
+Epoch: 2, Steps: 141 | Train Loss: 0.3508538 Vali Loss: 2.3123446 Test Loss: 1.2774374
+Validation loss decreased (5.994932 --> 2.312345).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.1907541
+	speed: 0.2415s/iter; left time: 1270.1138s
+Epoch: 3 cost time: 22.412265300750732
+Epoch: 3, Steps: 141 | Train Loss: 0.2179290 Vali Loss: 2.6199393 Test Loss: 1.5689322
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.1959622
+	speed: 0.2396s/iter; left time: 1226.2550s
+Epoch: 4 cost time: 22.433502197265625
+Epoch: 4, Steps: 141 | Train Loss: 0.1875531 Vali Loss: 2.9475477 Test Loss: 1.8809114
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.1600819
+	speed: 0.2362s/iter; left time: 1175.4192s
+Epoch: 5 cost time: 22.19373655319214
+Epoch: 5, Steps: 141 | Train Loss: 0.1748030 Vali Loss: 2.8223430 Test Loss: 1.8229703
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.1676862
+	speed: 0.2385s/iter; left time: 1153.6083s
+Epoch: 6 cost time: 22.319181442260742
+Epoch: 6, Steps: 141 | Train Loss: 0.1676078 Vali Loss: 2.9201992 Test Loss: 1.8760865
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.1919867
+	speed: 0.2387s/iter; left time: 1120.7257s
+Epoch: 7 cost time: 22.426849126815796
+Epoch: 7, Steps: 141 | Train Loss: 0.1645231 Vali Loss: 2.9646200 Test Loss: 1.8910477
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_Crossformer_exchange_rate_720_seed4_Crossformer_custom_ftM_sl96_ll48_pl720_dm256_nh4_el3_dl1_df512_expand2_dc4_fc10_ebfixed_dtTrue_Crossformer_exchange_rate_720_seed4_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 798
+test shape: (798, 720, 8) (798, 720, 8)
+test shape: (798, 720, 8) (798, 720, 8)
+mse:1.2781673669815063, mae:0.8889383673667908, dtw:Not calculated
+
+--- STDERR ---
+

@@ -1,0 +1,115 @@
+RETURNCODE: 0
+TIME: 8.6s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id PatchTST_national_illness_24_seed3 --model PatchTST --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/illness/ --data_path national_illness.csv --features M --target OT --freq w --embed fixed --seq_len 36 --pred_len 24 --label_len 18 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 3 --d_layers 1 --d_model 128 --d_ff 256 --n_heads 16 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 3 --itr 1 --des PatchTST_national_illness_24_seed3 --num_workers 0 --use_gpu --patch_len 16
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           PatchTST_national_illness_24_seed3Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/illness/
+  Data Path:          national_illness.csvFeatures:           M                   
+  Target:             OT                  Freq:               w                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            36                  Label Len:          18                  
+  Pred Len:           24                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            16                  e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                PatchTST_national_illness_24_seed3Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: PatchTST ...
+>>>>>>>start training : long_term_forecast_PatchTST_national_illness_24_seed3_PatchTST_custom_ftM_sl36_ll18_pl24_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_national_illness_24_seed3_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 617
+val 74
+test 170
+Epoch: 1 cost time: 0.6146490573883057
+Epoch: 1, Steps: 20 | Train Loss: 1.1101295 Vali Loss: 0.5522689 Test Loss: 3.8067499
+Validation loss decreased (inf --> 0.552269).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.25662970542907715
+Epoch: 2, Steps: 20 | Train Loss: 0.9671162 Vali Loss: 0.4525529 Test Loss: 3.2794535
+Validation loss decreased (0.552269 --> 0.452553).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.24592828750610352
+Epoch: 3, Steps: 20 | Train Loss: 0.8840339 Vali Loss: 0.4211179 Test Loss: 3.1728299
+Validation loss decreased (0.452553 --> 0.421118).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.2219686508178711
+Epoch: 4, Steps: 20 | Train Loss: 0.8871179 Vali Loss: 0.4467457 Test Loss: 3.1316516
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.25586581230163574
+Epoch: 5, Steps: 20 | Train Loss: 0.8605997 Vali Loss: 0.4395823 Test Loss: 3.1088987
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.2591664791107178
+Epoch: 6, Steps: 20 | Train Loss: 0.8908177 Vali Loss: 0.4549524 Test Loss: 3.0893608
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.2829885482788086
+Epoch: 7, Steps: 20 | Train Loss: 0.8538892 Vali Loss: 0.4203404 Test Loss: 3.0938499
+Validation loss decreased (0.421118 --> 0.420340).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.26828932762145996
+Epoch: 8, Steps: 20 | Train Loss: 0.8668569 Vali Loss: 0.4413539 Test Loss: 3.0920983
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.2610492706298828
+Epoch: 9, Steps: 20 | Train Loss: 0.8599786 Vali Loss: 0.3937277 Test Loss: 3.0954209
+Validation loss decreased (0.420340 --> 0.393728).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.25799560546875
+Epoch: 10, Steps: 20 | Train Loss: 0.8635763 Vali Loss: 0.4835471 Test Loss: 3.0916421
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.953125e-07
+Epoch: 11 cost time: 0.2541849613189697
+Epoch: 11, Steps: 20 | Train Loss: 0.8629318 Vali Loss: 0.4386763 Test Loss: 3.0976736
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 9.765625e-08
+Epoch: 12 cost time: 0.2898068428039551
+Epoch: 12, Steps: 20 | Train Loss: 0.8493620 Vali Loss: 0.4668515 Test Loss: 3.0969633
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 4.8828125e-08
+Epoch: 13 cost time: 0.2539207935333252
+Epoch: 13, Steps: 20 | Train Loss: 0.8719720 Vali Loss: 0.4753373 Test Loss: 3.0893431
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 2.44140625e-08
+Epoch: 14 cost time: 0.25687170028686523
+Epoch: 14, Steps: 20 | Train Loss: 0.8605487 Vali Loss: 0.3977735 Test Loss: 3.0845334
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_PatchTST_national_illness_24_seed3_PatchTST_custom_ftM_sl36_ll18_pl24_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_national_illness_24_seed3_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 170
+test shape: (170, 24, 7) (170, 24, 7)
+test shape: (170, 24, 7) (170, 24, 7)
+mse:2.7312424182891846, mae:1.0930458307266235, dtw:Not calculated
+
+--- STDERR ---
+

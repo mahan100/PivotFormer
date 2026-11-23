@@ -1,0 +1,113 @@
+RETURNCODE: 0
+TIME: 29.7s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id PatchTST_exchange_rate_336_seed4 --model PatchTST --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/exchange_rate/ --data_path exchange_rate.csv --features M --target OT --freq d --embed fixed --seq_len 96 --pred_len 336 --label_len 48 --enc_in 8 --dec_in 8 --c_out 8 --e_layers 3 --d_layers 1 --d_model 128 --d_ff 256 --n_heads 16 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 4 --itr 1 --des PatchTST_exchange_rate_336_seed4 --num_workers 0 --use_gpu --patch_len 16
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           PatchTST_exchange_rate_336_seed4Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/exchange_rate/
+  Data Path:          exchange_rate.csv   Features:           M                   
+  Target:             OT                  Freq:               d                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             8                   Dec In:             8                   
+  C Out:              8                   d model:            128                 
+  n heads:            16                  e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                PatchTST_exchange_rate_336_seed4Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: PatchTST ...
+>>>>>>>start training : long_term_forecast_PatchTST_exchange_rate_336_seed4_PatchTST_custom_ftM_sl96_ll48_pl336_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_exchange_rate_336_seed4_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4880
+val 425
+test 1182
+	iters: 100, epoch: 1 | loss: 0.3828413
+	speed: 0.0205s/iter; left time: 123.1512s
+Epoch: 1 cost time: 3.0884385108947754
+Epoch: 1, Steps: 153 | Train Loss: 0.4571131 Vali Loss: 0.3949283 Test Loss: 0.3288780
+Validation loss decreased (inf --> 0.394928).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.4596806
+	speed: 0.0310s/iter; left time: 182.1559s
+Epoch: 2 cost time: 2.9795424938201904
+Epoch: 2, Steps: 153 | Train Loss: 0.4430349 Vali Loss: 0.4052542 Test Loss: 0.3233856
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.4794973
+	speed: 0.0347s/iter; left time: 198.5340s
+Epoch: 3 cost time: 2.801591396331787
+Epoch: 3, Steps: 153 | Train Loss: 0.4397409 Vali Loss: 0.3978691 Test Loss: 0.3250000
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.3920082
+	speed: 0.0253s/iter; left time: 140.9696s
+Epoch: 4 cost time: 2.034602165222168
+Epoch: 4, Steps: 153 | Train Loss: 0.4387307 Vali Loss: 0.3935599 Test Loss: 0.3269013
+Validation loss decreased (0.394928 --> 0.393560).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.4219019
+	speed: 0.0210s/iter; left time: 113.3499s
+Epoch: 5 cost time: 1.740072250366211
+Epoch: 5, Steps: 153 | Train Loss: 0.4384582 Vali Loss: 0.4051957 Test Loss: 0.3310096
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.4221499
+	speed: 0.0213s/iter; left time: 112.1987s
+Epoch: 6 cost time: 1.958925485610962
+Epoch: 6, Steps: 153 | Train Loss: 0.4384736 Vali Loss: 0.3938525 Test Loss: 0.3308429
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.5218115
+	speed: 0.0240s/iter; left time: 122.7233s
+Epoch: 7 cost time: 2.3839924335479736
+Epoch: 7, Steps: 153 | Train Loss: 0.4377602 Vali Loss: 0.3961904 Test Loss: 0.3308707
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.4088838
+	speed: 0.0266s/iter; left time: 131.8467s
+Epoch: 8 cost time: 2.396293878555298
+Epoch: 8, Steps: 153 | Train Loss: 0.4382120 Vali Loss: 0.3978383 Test Loss: 0.3302616
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 7.8125e-07
+	iters: 100, epoch: 9 | loss: 0.4673949
+	speed: 0.0273s/iter; left time: 130.8848s
+Epoch: 9 cost time: 2.766371488571167
+Epoch: 9, Steps: 153 | Train Loss: 0.4377981 Vali Loss: 0.3976914 Test Loss: 0.3302741
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_PatchTST_exchange_rate_336_seed4_PatchTST_custom_ftM_sl96_ll48_pl336_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_exchange_rate_336_seed4_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1182
+test shape: (1182, 336, 8) (1182, 336, 8)
+test shape: (1182, 336, 8) (1182, 336, 8)
+mse:0.32693904638290405, mae:0.41464516520500183, dtw:Not calculated
+
+--- STDERR ---
+

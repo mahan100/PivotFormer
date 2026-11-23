@@ -1,0 +1,107 @@
+RETURNCODE: 0
+TIME: 162.3s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id Crossformer_ETTh1_720_seed3 --model Crossformer --data ETTh1 --root_path /mnt/d/Project/RubickFormer/data/raw/ETTh1/ --data_path ETTh1.csv --features M --target OT --freq h --embed fixed --seq_len 96 --pred_len 720 --label_len 48 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 3 --d_layers 1 --d_model 256 --d_ff 512 --n_heads 4 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 3 --itr 1 --des Crossformer_ETTh1_720_seed3 --num_workers 0 --use_gpu --factor 10 --seg_len 6 --channel_independence 0
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           Crossformer_ETTh1_720_seed3Model:              Crossformer         
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          /mnt/d/Project/RubickFormer/data/raw/ETTh1/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           720                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            256                 
+  n heads:            4                   e layers:           3                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             10                  
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                Crossformer_ETTh1_720_seed3Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: Crossformer ...
+>>>>>>>start training : long_term_forecast_Crossformer_ETTh1_720_seed3_Crossformer_ETTh1_ftM_sl96_ll48_pl720_dm256_nh4_el3_dl1_df512_expand2_dc4_fc10_ebfixed_dtTrue_Crossformer_ETTh1_720_seed3_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+	iters: 100, epoch: 1 | loss: 0.6761807
+	speed: 0.0892s/iter; left time: 865.5570s
+	iters: 200, epoch: 1 | loss: 0.5519406
+	speed: 0.0882s/iter; left time: 846.4534s
+Epoch: 1 cost time: 21.682225704193115
+Epoch: 1, Steps: 245 | Train Loss: 0.6922454 Vali Loss: 1.2342335 Test Loss: 0.7400299
+Validation loss decreased (inf --> 1.234234).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.4852699
+	speed: 0.1714s/iter; left time: 1620.7146s
+	iters: 200, epoch: 2 | loss: 0.4368726
+	speed: 0.0882s/iter; left time: 825.5192s
+Epoch: 2 cost time: 21.522218465805054
+Epoch: 2, Steps: 245 | Train Loss: 0.4706987 Vali Loss: 1.3168824 Test Loss: 0.6870347
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.3981339
+	speed: 0.1692s/iter; left time: 1558.8675s
+	iters: 200, epoch: 3 | loss: 0.4100276
+	speed: 0.0875s/iter; left time: 797.0647s
+Epoch: 3 cost time: 21.47480297088623
+Epoch: 3, Steps: 245 | Train Loss: 0.4194066 Vali Loss: 1.2817343 Test Loss: 0.8195527
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.4389663
+	speed: 0.1706s/iter; left time: 1529.9403s
+	iters: 200, epoch: 4 | loss: 0.4240433
+	speed: 0.0879s/iter; left time: 778.9196s
+Epoch: 4 cost time: 21.52109408378601
+Epoch: 4, Steps: 245 | Train Loss: 0.3998916 Vali Loss: 1.3242383 Test Loss: 0.8190844
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.3898779
+	speed: 0.1699s/iter; left time: 1482.1107s
+	iters: 200, epoch: 5 | loss: 0.3886052
+	speed: 0.0881s/iter; left time: 759.2101s
+Epoch: 5 cost time: 21.548673152923584
+Epoch: 5, Steps: 245 | Train Loss: 0.3917801 Vali Loss: 1.3194794 Test Loss: 0.8263361
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.3941185
+	speed: 0.1694s/iter; left time: 1435.8148s
+	iters: 200, epoch: 6 | loss: 0.3886831
+	speed: 0.0882s/iter; left time: 739.1176s
+Epoch: 6 cost time: 21.558634996414185
+Epoch: 6, Steps: 245 | Train Loss: 0.3876555 Vali Loss: 1.3179644 Test Loss: 0.8556741
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_Crossformer_ETTh1_720_seed3_Crossformer_ETTh1_ftM_sl96_ll48_pl720_dm256_nh4_el3_dl1_df512_expand2_dc4_fc10_ebfixed_dtTrue_Crossformer_ETTh1_720_seed3_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+test shape: (2161, 720, 7) (2161, 720, 7)
+test shape: (2161, 720, 7) (2161, 720, 7)
+mse:0.7394039034843445, mae:0.6572107672691345, dtw:Not calculated
+
+--- STDERR ---
+

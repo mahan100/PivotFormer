@@ -1,0 +1,91 @@
+RETURNCODE: 0
+TIME: 8.8s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id Crossformer_national_illness_60_seed5 --model Crossformer --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/illness/ --data_path national_illness.csv --features M --target OT --freq w --embed fixed --seq_len 36 --pred_len 60 --label_len 18 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 3 --d_layers 1 --d_model 256 --d_ff 512 --n_heads 4 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 5 --itr 1 --des Crossformer_national_illness_60_seed5 --num_workers 0 --use_gpu --factor 10 --seg_len 6 --channel_independence 0
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           Crossformer_national_illness_60_seed5Model:              Crossformer         
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/illness/
+  Data Path:          national_illness.csvFeatures:           M                   
+  Target:             OT                  Freq:               w                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            36                  Label Len:          18                  
+  Pred Len:           60                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            256                 
+  n heads:            4                   e layers:           3                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             10                  
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                Crossformer_national_illness_60_seed5Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: Crossformer ...
+>>>>>>>start training : long_term_forecast_Crossformer_national_illness_60_seed5_Crossformer_custom_ftM_sl36_ll18_pl60_dm256_nh4_el3_dl1_df512_expand2_dc4_fc10_ebfixed_dtTrue_Crossformer_national_illness_60_seed5_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 581
+val 38
+test 134
+Epoch: 1 cost time: 0.6477532386779785
+Epoch: 1, Steps: 19 | Train Loss: 1.1891651 Vali Loss: 0.8063305 Test Loss: 5.7565979
+Validation loss decreased (inf --> 0.806330).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.4906890392303467
+Epoch: 2, Steps: 19 | Train Loss: 0.9033235 Vali Loss: 0.6636036 Test Loss: 5.2517910
+Validation loss decreased (0.806330 --> 0.663604).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.4748961925506592
+Epoch: 3, Steps: 19 | Train Loss: 0.8432891 Vali Loss: 0.5441033 Test Loss: 5.2358697
+Validation loss decreased (0.663604 --> 0.544103).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.554548978805542
+Epoch: 4, Steps: 19 | Train Loss: 0.8180295 Vali Loss: 0.5855334 Test Loss: 5.1617242
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.5460629463195801
+Epoch: 5, Steps: 19 | Train Loss: 0.7973425 Vali Loss: 0.5884036 Test Loss: 5.2259864
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.4911782741546631
+Epoch: 6, Steps: 19 | Train Loss: 0.7891395 Vali Loss: 0.5993722 Test Loss: 5.1858026
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.5189836025238037
+Epoch: 7, Steps: 19 | Train Loss: 0.7886494 Vali Loss: 0.5847873 Test Loss: 5.1909402
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.5428061485290527
+Epoch: 8, Steps: 19 | Train Loss: 0.7979647 Vali Loss: 0.5678125 Test Loss: 5.1831625
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_Crossformer_national_illness_60_seed5_Crossformer_custom_ftM_sl36_ll18_pl60_dm256_nh4_el3_dl1_df512_expand2_dc4_fc10_ebfixed_dtTrue_Crossformer_national_illness_60_seed5_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 134
+test shape: (134, 60, 7) (134, 60, 7)
+test shape: (134, 60, 7) (134, 60, 7)
+mse:5.1721882820129395, mae:1.5930922031402588, dtw:Not calculated
+
+--- STDERR ---
+

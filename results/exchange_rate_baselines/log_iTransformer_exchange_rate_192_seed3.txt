@@ -1,0 +1,119 @@
+RETURNCODE: 0
+TIME: 26.5s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id iTransformer_exchange_rate_192_seed3 --model iTransformer --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/exchange_rate/ --data_path exchange_rate.csv --features M --target OT --freq d --embed fixed --seq_len 96 --pred_len 192 --label_len 48 --enc_in 8 --dec_in 8 --c_out 8 --e_layers 2 --d_layers 1 --d_model 512 --d_ff 2048 --n_heads 8 --dropout 0.1 --train_epochs 10 --batch_size 16 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 3 --itr 1 --des iTransformer_exchange_rate_192_seed3 --num_workers 0 --use_gpu
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           iTransformer_exchange_rate_192_seed3Model:              iTransformer        
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/exchange_rate/
+  Data Path:          exchange_rate.csv   Features:           M                   
+  Target:             OT                  Freq:               d                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             8                   Dec In:             8                   
+  C Out:              8                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                iTransformer_exchange_rate_192_seed3Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: iTransformer ...
+>>>>>>>start training : long_term_forecast_iTransformer_exchange_rate_192_seed3_iTransformer_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebfixed_dtTrue_iTransformer_exchange_rate_192_seed3_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5024
+val 569
+test 1326
+	iters: 100, epoch: 1 | loss: 0.2066632
+	speed: 0.0128s/iter; left time: 39.0723s
+	iters: 200, epoch: 1 | loss: 0.3406754
+	speed: 0.0085s/iter; left time: 25.0090s
+	iters: 300, epoch: 1 | loss: 0.1948194
+	speed: 0.0098s/iter; left time: 27.7305s
+Epoch: 1 cost time: 3.2384912967681885
+Epoch: 1, Steps: 314 | Train Loss: 0.2609306 Vali Loss: 0.2222960 Test Loss: 0.1780001
+Validation loss decreased (inf --> 0.222296).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.6331785
+	speed: 0.0191s/iter; left time: 52.0994s
+	iters: 200, epoch: 2 | loss: 0.2572872
+	speed: 0.0092s/iter; left time: 24.2813s
+	iters: 300, epoch: 2 | loss: 0.2195184
+	speed: 0.0085s/iter; left time: 21.3747s
+Epoch: 2 cost time: 2.8542516231536865
+Epoch: 2, Steps: 314 | Train Loss: 0.2425026 Vali Loss: 0.2293398 Test Loss: 0.1857585
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.1754258
+	speed: 0.0175s/iter; left time: 42.2183s
+	iters: 200, epoch: 3 | loss: 0.3697253
+	speed: 0.0091s/iter; left time: 21.0834s
+	iters: 300, epoch: 3 | loss: 0.2376539
+	speed: 0.0094s/iter; left time: 20.8067s
+Epoch: 3 cost time: 2.900322437286377
+Epoch: 3, Steps: 314 | Train Loss: 0.2278882 Vali Loss: 0.2285885 Test Loss: 0.2048810
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.1905868
+	speed: 0.0171s/iter; left time: 35.9968s
+	iters: 200, epoch: 4 | loss: 0.2031438
+	speed: 0.0094s/iter; left time: 18.7862s
+	iters: 300, epoch: 4 | loss: 0.2256803
+	speed: 0.0092s/iter; left time: 17.3830s
+Epoch: 4 cost time: 2.9346981048583984
+Epoch: 4, Steps: 314 | Train Loss: 0.2167508 Vali Loss: 0.2360362 Test Loss: 0.2106168
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.2054485
+	speed: 0.0169s/iter; left time: 30.1798s
+	iters: 200, epoch: 5 | loss: 0.1763059
+	speed: 0.0095s/iter; left time: 16.0552s
+	iters: 300, epoch: 5 | loss: 0.1596870
+	speed: 0.0095s/iter; left time: 14.9982s
+Epoch: 5 cost time: 2.872591733932495
+Epoch: 5, Steps: 314 | Train Loss: 0.2094275 Vali Loss: 0.2509652 Test Loss: 0.2113798
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.1658150
+	speed: 0.0175s/iter; left time: 25.7610s
+	iters: 200, epoch: 6 | loss: 0.1697234
+	speed: 0.0084s/iter; left time: 11.5019s
+	iters: 300, epoch: 6 | loss: 0.1662761
+	speed: 0.0095s/iter; left time: 12.0635s
+Epoch: 6 cost time: 2.861321449279785
+Epoch: 6, Steps: 314 | Train Loss: 0.2049625 Vali Loss: 0.2470146 Test Loss: 0.2181214
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_iTransformer_exchange_rate_192_seed3_iTransformer_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebfixed_dtTrue_iTransformer_exchange_rate_192_seed3_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1326
+test shape: (1326, 192, 8) (1326, 192, 8)
+test shape: (1326, 192, 8) (1326, 192, 8)
+mse:0.1779901087284088, mae:0.3031243085861206, dtw:Not calculated
+
+--- STDERR ---
+

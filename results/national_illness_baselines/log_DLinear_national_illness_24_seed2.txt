@@ -1,0 +1,111 @@
+RETURNCODE: 0
+TIME: 4.4s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id DLinear_national_illness_24_seed2 --model DLinear --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/illness/ --data_path national_illness.csv --features M --target OT --freq w --embed fixed --seq_len 36 --pred_len 24 --label_len 18 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 1 --d_layers 1 --d_model 16 --d_ff 1 --n_heads 1 --dropout 0.05 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 2 --itr 1 --des DLinear_national_illness_24_seed2 --num_workers 0 --use_gpu --moving_avg 25
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           DLinear_national_illness_24_seed2Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/illness/
+  Data Path:          national_illness.csvFeatures:           M                   
+  Target:             OT                  Freq:               w                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            36                  Label Len:          18                  
+  Pred Len:           24                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            16                  
+  n heads:            1                   e layers:           1                   
+  d layers:           1                   d FF:               1                   
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.05                
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                DLinear_national_illness_24_seed2Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: DLinear ...
+>>>>>>>start training : long_term_forecast_DLinear_national_illness_24_seed2_DLinear_custom_ftM_sl36_ll18_pl24_dm16_nh1_el1_dl1_df1_expand2_dc4_fc1_ebfixed_dtTrue_DLinear_national_illness_24_seed2_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 617
+val 74
+test 170
+Epoch: 1 cost time: 0.14468097686767578
+Epoch: 1, Steps: 20 | Train Loss: 1.0971551 Vali Loss: 1.0051900 Test Loss: 4.7566262
+Validation loss decreased (inf --> 1.005190).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.06364846229553223
+Epoch: 2, Steps: 20 | Train Loss: 1.0557218 Vali Loss: 1.0238909 Test Loss: 4.6243876
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.06282830238342285
+Epoch: 3, Steps: 20 | Train Loss: 1.0126224 Vali Loss: 0.9723250 Test Loss: 4.5674753
+Validation loss decreased (1.005190 --> 0.972325).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.06301236152648926
+Epoch: 4, Steps: 20 | Train Loss: 1.0060914 Vali Loss: 0.9843528 Test Loss: 4.5404577
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.06097602844238281
+Epoch: 5, Steps: 20 | Train Loss: 1.0115408 Vali Loss: 1.0257490 Test Loss: 4.5272654
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.07026147842407227
+Epoch: 6, Steps: 20 | Train Loss: 0.9917650 Vali Loss: 1.0502140 Test Loss: 4.5207439
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.06462764739990234
+Epoch: 7, Steps: 20 | Train Loss: 1.0007117 Vali Loss: 0.9580118 Test Loss: 4.5175421
+Validation loss decreased (0.972325 --> 0.958012).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.06386327743530273
+Epoch: 8, Steps: 20 | Train Loss: 1.0110620 Vali Loss: 0.8975348 Test Loss: 4.5159229
+Validation loss decreased (0.958012 --> 0.897535).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.06629753112792969
+Epoch: 9, Steps: 20 | Train Loss: 0.9942247 Vali Loss: 1.0111639 Test Loss: 4.5151153
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.06058311462402344
+Epoch: 10, Steps: 20 | Train Loss: 0.9973159 Vali Loss: 1.0111027 Test Loss: 4.5147103
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 1.953125e-07
+Epoch: 11 cost time: 0.061960458755493164
+Epoch: 11, Steps: 20 | Train Loss: 1.0012286 Vali Loss: 0.9893674 Test Loss: 4.5145087
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 9.765625e-08
+Epoch: 12 cost time: 0.05807995796203613
+Epoch: 12, Steps: 20 | Train Loss: 0.9877789 Vali Loss: 0.9269974 Test Loss: 4.5144050
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 4.8828125e-08
+Epoch: 13 cost time: 0.07441329956054688
+Epoch: 13, Steps: 20 | Train Loss: 1.0003212 Vali Loss: 0.9451336 Test Loss: 4.5143548
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_DLinear_national_illness_24_seed2_DLinear_custom_ftM_sl36_ll18_pl24_dm16_nh1_el1_dl1_df1_expand2_dc4_fc1_ebfixed_dtTrue_DLinear_national_illness_24_seed2_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 170
+test shape: (170, 24, 7) (170, 24, 7)
+test shape: (170, 24, 7) (170, 24, 7)
+mse:4.77640438079834, mae:1.655470848083496, dtw:Not calculated
+
+--- STDERR ---
+

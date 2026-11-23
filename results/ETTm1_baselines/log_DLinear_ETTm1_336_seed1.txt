@@ -1,0 +1,100 @@
+RETURNCODE: 1
+TIME: 8.1s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id DLinear_ETTm1_336_seed1 --model DLinear --data ETTm1 --root_path /mnt/d/Project/RubickFormer/data/raw/ETTm1/ --data_path ETTm1.csv --features M --target OT --freq t --embed fixed --seq_len 96 --pred_len 336 --label_len 48 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 1 --d_layers 1 --d_model 16 --d_ff 1 --n_heads 1 --dropout 0.05 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 1 --itr 1 --des DLinear_ETTm1_336_seed1 --num_workers 0 --use_gpu --moving_avg 25
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           DLinear_ETTm1_336_seed1Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               ETTm1               Root Path:          /mnt/d/Project/RubickFormer/data/raw/ETTm1/
+  Data Path:          ETTm1.csv           Features:           M                   
+  Target:             OT                  Freq:               t                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            16                  
+  n heads:            1                   e layers:           1                   
+  d layers:           1                   d FF:               1                   
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.05                
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                DLinear_ETTm1_336_seed1Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: DLinear ...
+>>>>>>>start training : long_term_forecast_DLinear_ETTm1_336_seed1_DLinear_ETTm1_ftM_sl96_ll48_pl336_dm16_nh1_el1_dl1_df1_expand2_dc4_fc1_ebfixed_dtTrue_DLinear_ETTm1_336_seed1_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 34129
+val 11185
+test 11185
+	iters: 100, epoch: 1 | loss: 0.4442567
+	speed: 0.0110s/iter; left time: 468.9160s
+	iters: 200, epoch: 1 | loss: 0.3798086
+	speed: 0.0043s/iter; left time: 183.2897s
+	iters: 300, epoch: 1 | loss: 0.4962403
+	speed: 0.0042s/iter; left time: 179.0509s
+	iters: 400, epoch: 1 | loss: 0.4442890
+	speed: 0.0042s/iter; left time: 175.8322s
+	iters: 500, epoch: 1 | loss: 0.4512664
+	speed: 0.0043s/iter; left time: 179.6673s
+	iters: 600, epoch: 1 | loss: 0.3565108
+	speed: 0.0041s/iter; left time: 173.6110s
+	iters: 700, epoch: 1 | loss: 0.4262797
+	speed: 0.0052s/iter; left time: 219.6892s
+	iters: 800, epoch: 1 | loss: 0.3731278
+	speed: 0.0046s/iter; left time: 191.3427s
+	iters: 900, epoch: 1 | loss: 0.4253662
+	speed: 0.0025s/iter; left time: 103.6956s
+	iters: 1000, epoch: 1 | loss: 0.3957352
+	speed: 0.0016s/iter; left time: 67.9595s
+Epoch: 1 cost time: 4.135356187820435
+Epoch: 1, Steps: 1067 | Train Loss: 0.4230249 Vali Loss: 0.6427194 Test Loss: 0.4194405
+Validation loss decreased (inf --> 0.642719).  Saving model ...
+
+--- STDERR ---
+Traceback (most recent call last):
+  File "/home/mahan100/.conda/envs/tslib_pt/lib/python3.10/site-packages/torch/serialization.py", line 628, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol, _disable_byteorder_record)
+  File "/home/mahan100/.conda/envs/tslib_pt/lib/python3.10/site-packages/torch/serialization.py", line 862, in _save
+    zip_file.write_record(name, storage, num_bytes)
+RuntimeError: [enforce fail at inline_container.cc:764] . PytorchStreamWriter failed writing file data/0: file write failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/d/Project/RubickFormer/Time-Series-Library-main/run.py", line 255, in <module>
+    exp.train(setting)
+  File "/mnt/d/Project/RubickFormer/Time-Series-Library-main/exp/exp_long_term_forecasting.py", line 156, in train
+    early_stopping(vali_loss, self.model, path)
+  File "/mnt/d/Project/RubickFormer/Time-Series-Library-main/utils/tools.py", line 46, in __call__
+    self.save_checkpoint(val_loss, model, path)
+  File "/mnt/d/Project/RubickFormer/Time-Series-Library-main/utils/tools.py", line 60, in save_checkpoint
+    torch.save(model.state_dict(), path + '/' + 'checkpoint.pth')
+  File "/home/mahan100/.conda/envs/tslib_pt/lib/python3.10/site-packages/torch/serialization.py", line 627, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/home/mahan100/.conda/envs/tslib_pt/lib/python3.10/site-packages/torch/serialization.py", line 475, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:595] . unexpected pos 960 vs 854
+

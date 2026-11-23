@@ -1,0 +1,107 @@
+RETURNCODE: 0
+TIME: 4.1s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id DLinear_national_illness_36_seed4 --model DLinear --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/illness/ --data_path national_illness.csv --features M --target OT --freq w --embed fixed --seq_len 36 --pred_len 36 --label_len 18 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 1 --d_layers 1 --d_model 16 --d_ff 1 --n_heads 1 --dropout 0.05 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 4 --itr 1 --des DLinear_national_illness_36_seed4 --num_workers 0 --use_gpu --moving_avg 25
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           DLinear_national_illness_36_seed4Model:              DLinear             
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/illness/
+  Data Path:          national_illness.csvFeatures:           M                   
+  Target:             OT                  Freq:               w                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            36                  Label Len:          18                  
+  Pred Len:           36                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            16                  
+  n heads:            1                   e layers:           1                   
+  d layers:           1                   d FF:               1                   
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.05                
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                DLinear_national_illness_36_seed4Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: DLinear ...
+>>>>>>>start training : long_term_forecast_DLinear_national_illness_36_seed4_DLinear_custom_ftM_sl36_ll18_pl36_dm16_nh1_el1_dl1_df1_expand2_dc4_fc1_ebfixed_dtTrue_DLinear_national_illness_36_seed4_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 605
+val 62
+test 158
+Epoch: 1 cost time: 0.15000152587890625
+Epoch: 1, Steps: 19 | Train Loss: 1.0020166 Vali Loss: 0.7673809 Test Loss: 4.6385410
+Validation loss decreased (inf --> 0.767381).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.05312800407409668
+Epoch: 2, Steps: 19 | Train Loss: 0.9703682 Vali Loss: 0.7503390 Test Loss: 4.5160080
+Validation loss decreased (0.767381 --> 0.750339).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.059567928314208984
+Epoch: 3, Steps: 19 | Train Loss: 0.9497502 Vali Loss: 0.7423877 Test Loss: 4.4608233
+Validation loss decreased (0.750339 --> 0.742388).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.05548858642578125
+Epoch: 4, Steps: 19 | Train Loss: 0.9400158 Vali Loss: 0.7377930 Test Loss: 4.4335962
+Validation loss decreased (0.742388 --> 0.737793).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.05916547775268555
+Epoch: 5, Steps: 19 | Train Loss: 0.9342469 Vali Loss: 0.7390943 Test Loss: 4.4208295
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.05117344856262207
+Epoch: 6, Steps: 19 | Train Loss: 0.9339292 Vali Loss: 0.7375565 Test Loss: 4.4142235
+Validation loss decreased (0.737793 --> 0.737556).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.06040596961975098
+Epoch: 7, Steps: 19 | Train Loss: 0.9315788 Vali Loss: 0.7320628 Test Loss: 4.4110139
+Validation loss decreased (0.737556 --> 0.732063).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.05838203430175781
+Epoch: 8, Steps: 19 | Train Loss: 0.9308268 Vali Loss: 0.7344438 Test Loss: 4.4093711
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.06031990051269531
+Epoch: 9, Steps: 19 | Train Loss: 0.9317846 Vali Loss: 0.7323837 Test Loss: 4.4085822
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.056554317474365234
+Epoch: 10, Steps: 19 | Train Loss: 0.9296201 Vali Loss: 0.7364200 Test Loss: 4.4081724
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 1.953125e-07
+Epoch: 11 cost time: 0.056765079498291016
+Epoch: 11, Steps: 19 | Train Loss: 0.9310696 Vali Loss: 0.7337893 Test Loss: 4.4079672
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 9.765625e-08
+Epoch: 12 cost time: 0.051030635833740234
+Epoch: 12, Steps: 19 | Train Loss: 0.9304224 Vali Loss: 0.7335703 Test Loss: 4.4078648
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_DLinear_national_illness_36_seed4_DLinear_custom_ftM_sl36_ll18_pl36_dm16_nh1_el1_dl1_df1_expand2_dc4_fc1_ebfixed_dtTrue_DLinear_national_illness_36_seed4_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 158
+test shape: (158, 36, 7) (158, 36, 7)
+test shape: (158, 36, 7) (158, 36, 7)
+mse:4.400141716003418, mae:1.551269292831421, dtw:Not calculated
+
+--- STDERR ---
+

@@ -1,0 +1,20 @@
+# Heavy raw predictions & model checkpoints
+*.npy
+*.npz
+*.pth
+*.pt
+*.ckpt
+
+# Raw datasets & third-party TSLib repo
+data/
+Time-Series-Library-main/
+
+# Temporary evaluation, cache & notebook checkpoints
+**/evaluation_*/
+**/checkpoints/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Word reports (remove this line if you want .docx reports on GitHub)
+*.docx

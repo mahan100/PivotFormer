@@ -1,0 +1,99 @@
+RETURNCODE: 0
+TIME: 8.7s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id iTransformer_national_illness_60_seed1 --model iTransformer --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/illness/ --data_path national_illness.csv --features M --target OT --freq w --embed fixed --seq_len 36 --pred_len 60 --label_len 18 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 2 --d_layers 1 --d_model 512 --d_ff 2048 --n_heads 8 --dropout 0.1 --train_epochs 10 --batch_size 16 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 1 --itr 1 --des iTransformer_national_illness_60_seed1 --num_workers 0 --use_gpu
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           iTransformer_national_illness_60_seed1Model:              iTransformer        
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/illness/
+  Data Path:          national_illness.csvFeatures:           M                   
+  Target:             OT                  Freq:               w                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            36                  Label Len:          18                  
+  Pred Len:           60                  Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                iTransformer_national_illness_60_seed1Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: iTransformer ...
+>>>>>>>start training : long_term_forecast_iTransformer_national_illness_60_seed1_iTransformer_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebfixed_dtTrue_iTransformer_national_illness_60_seed1_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 581
+val 38
+test 134
+Epoch: 1 cost time: 0.7441937923431396
+Epoch: 1, Steps: 37 | Train Loss: 0.8537127 Vali Loss: 0.4165846 Test Loss: 2.6598839
+Validation loss decreased (inf --> 0.416585).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.34986090660095215
+Epoch: 2, Steps: 37 | Train Loss: 0.7098613 Vali Loss: 0.4324971 Test Loss: 2.7660755
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.3629777431488037
+Epoch: 3, Steps: 37 | Train Loss: 0.6563584 Vali Loss: 0.3672602 Test Loss: 2.6013198
+Validation loss decreased (0.416585 --> 0.367260).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.36019086837768555
+Epoch: 4, Steps: 37 | Train Loss: 0.6260097 Vali Loss: 0.3727396 Test Loss: 2.5359979
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.3652961254119873
+Epoch: 5, Steps: 37 | Train Loss: 0.6110421 Vali Loss: 0.3596162 Test Loss: 2.5269783
+Validation loss decreased (0.367260 --> 0.359616).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.36529040336608887
+Epoch: 6, Steps: 37 | Train Loss: 0.5954557 Vali Loss: 0.3495147 Test Loss: 2.5253781
+Validation loss decreased (0.359616 --> 0.349515).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.3586122989654541
+Epoch: 7, Steps: 37 | Train Loss: 0.5958469 Vali Loss: 0.3323420 Test Loss: 2.5407955
+Validation loss decreased (0.349515 --> 0.332342).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.3475167751312256
+Epoch: 8, Steps: 37 | Train Loss: 0.5957750 Vali Loss: 0.3562444 Test Loss: 2.5372732
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.34476184844970703
+Epoch: 9, Steps: 37 | Train Loss: 0.6003567 Vali Loss: 0.3332105 Test Loss: 2.5348040
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.36782383918762207
+Epoch: 10, Steps: 37 | Train Loss: 0.5988775 Vali Loss: 0.3388214 Test Loss: 2.5332734
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 1.953125e-07
+>>>>>>>testing : long_term_forecast_iTransformer_national_illness_60_seed1_iTransformer_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_expand2_dc4_fc1_ebfixed_dtTrue_iTransformer_national_illness_60_seed1_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 134
+test shape: (134, 60, 7) (134, 60, 7)
+test shape: (134, 60, 7) (134, 60, 7)
+mse:2.2762320041656494, mae:0.9773314595222473, dtw:Not calculated
+
+--- STDERR ---
+

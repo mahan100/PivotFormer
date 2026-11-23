@@ -1,0 +1,115 @@
+RETURNCODE: 0
+TIME: 17.8s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id PatchTST_ETTh1_720_seed3 --model PatchTST --data ETTh1 --root_path /mnt/d/Project/RubickFormer/data/raw/ETTh1/ --data_path ETTh1.csv --features M --target OT --freq h --embed fixed --seq_len 96 --pred_len 720 --label_len 48 --enc_in 7 --dec_in 7 --c_out 7 --e_layers 3 --d_layers 1 --d_model 128 --d_ff 256 --n_heads 16 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 3 --itr 1 --des PatchTST_ETTh1_720_seed3 --num_workers 0 --use_gpu
+--- STDOUT (5444 chars) ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           PatchTST_ETTh1_720_seed3Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               ETTh1               Root Path:          /mnt/d/Project/RubickFormer/data/raw/ETTh1/
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           720                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            16                  e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                PatchTST_ETTh1_720_seed3Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: PatchTST ...
+>>>>>>>start training : long_term_forecast_PatchTST_ETTh1_720_seed3_PatchTST_ETTh1_ftM_sl96_ll48_pl720_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_ETTh1_720_seed3_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+	iters: 100, epoch: 1 | loss: 0.7928435
+	speed: 0.0088s/iter; left time: 85.5224s
+	iters: 200, epoch: 1 | loss: 0.6303996
+	speed: 0.0060s/iter; left time: 57.2774s
+Epoch: 1 cost time: 1.7527499198913574
+Epoch: 1, Steps: 245 | Train Loss: 0.6982426 Vali Loss: 1.5839276 Test Loss: 0.4935940
+Validation loss decreased (inf --> 1.583928).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.7163106
+	speed: 0.0123s/iter; left time: 116.0258s
+	iters: 200, epoch: 2 | loss: 0.5982243
+	speed: 0.0059s/iter; left time: 55.6462s
+Epoch: 2 cost time: 1.4680917263031006
+Epoch: 2, Steps: 245 | Train Loss: 0.6518082 Vali Loss: 1.5728225 Test Loss: 0.4833475
+Validation loss decreased (1.583928 --> 1.572822).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.6517777
+	speed: 0.0122s/iter; left time: 111.9632s
+	iters: 200, epoch: 3 | loss: 0.5535684
+	speed: 0.0059s/iter; left time: 53.4332s
+Epoch: 3 cost time: 1.4440929889678955
+Epoch: 3, Steps: 245 | Train Loss: 0.6376187 Vali Loss: 1.5783930 Test Loss: 0.4722827
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.5958100
+	speed: 0.0117s/iter; left time: 105.1814s
+	iters: 200, epoch: 4 | loss: 0.7045415
+	speed: 0.0059s/iter; left time: 52.2554s
+Epoch: 4 cost time: 1.4337821006774902
+Epoch: 4, Steps: 245 | Train Loss: 0.6303414 Vali Loss: 1.5760130 Test Loss: 0.4757398
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.4860766
+	speed: 0.0116s/iter; left time: 101.5859s
+	iters: 200, epoch: 5 | loss: 0.7236682
+	speed: 0.0058s/iter; left time: 50.3167s
+Epoch: 5 cost time: 1.444526195526123
+Epoch: 5, Steps: 245 | Train Loss: 0.6277205 Vali Loss: 1.5799935 Test Loss: 0.4749298
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.6510119
+	speed: 0.0117s/iter; left time: 98.7475s
+	iters: 200, epoch: 6 | loss: 0.6378173
+	speed: 0.0059s/iter; left time: 49.6369s
+Epoch: 6 cost time: 1.4425156116485596
+Epoch: 6, Steps: 245 | Train Loss: 0.6262448 Vali Loss: 1.5826379 Test Loss: 0.4726819
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.7287915
+	speed: 0.0118s/iter; left time: 97.4221s
+	iters: 200, epoch: 7 | loss: 0.5668062
+	speed: 0.0060s/iter; left time: 48.5573s
+Epoch: 7 cost time: 1.4478182792663574
+Epoch: 7, Steps: 245 | Train Loss: 0.6256178 Vali Loss: 1.5819606 Test Loss: 0.4768969
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_PatchTST_ETTh1_720_seed3_PatchTST_ETTh1_ftM_sl96_ll48_pl720_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_ETTh1_720_seed3_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+test shape: (2161, 720, 7) (2161, 720, 7)
+test shape: (2161, 720, 7) (2161, 720, 7)
+mse:0.4821314215660095, mae:0.4826996326446533, dtw:Not calculated
+
+--- STDERR (0 chars) ---
+

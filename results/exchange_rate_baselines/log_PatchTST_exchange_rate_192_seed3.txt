@@ -1,0 +1,107 @@
+RETURNCODE: 0
+TIME: 22.6s
+CMD: /home/mahan100/.conda/envs/tslib_pt/bin/python -u run.py --task_name long_term_forecast --is_training 1 --model_id PatchTST_exchange_rate_192_seed3 --model PatchTST --data custom --root_path /mnt/d/Project/RubickFormer/data/raw/exchange_rate/ --data_path exchange_rate.csv --features M --target OT --freq d --embed fixed --seq_len 96 --pred_len 192 --label_len 48 --enc_in 8 --dec_in 8 --c_out 8 --e_layers 3 --d_layers 1 --d_model 128 --d_ff 256 --n_heads 16 --dropout 0.2 --train_epochs 40 --batch_size 32 --learning_rate 0.0001 --patience 5 --use_norm 1 --seed 3 --itr 1 --des PatchTST_exchange_rate_192_seed3 --num_workers 0 --use_gpu --patch_len 16
+--- STDOUT ---
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           PatchTST_exchange_rate_192_seed3Model:              PatchTST            
+
+[1mData Loader[0m
+  Data:               custom              Root Path:          /mnt/d/Project/RubickFormer/data/raw/exchange_rate/
+  Data Path:          exchange_rate.csv   Features:           M                   
+  Target:             OT                  Freq:               d                   
+  Checkpoints:        ./checkpoints/      
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             8                   Dec In:             8                   
+  C Out:              8                   d model:            128                 
+  n heads:            16                  e layers:           3                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.2                 
+  Embed:              fixed               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        0                   Itr:                1                   
+  Train Epochs:       40                  Batch Size:         32                  
+  Patience:           5                   Learning Rate:      0.0001              
+  Des:                PatchTST_exchange_rate_192_seed3Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+🚀 Lazy Loading: PatchTST ...
+>>>>>>>start training : long_term_forecast_PatchTST_exchange_rate_192_seed3_PatchTST_custom_ftM_sl96_ll48_pl192_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_exchange_rate_192_seed3_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5024
+val 569
+test 1326
+	iters: 100, epoch: 1 | loss: 0.2799433
+	speed: 0.0151s/iter; left time: 93.4306s
+Epoch: 1 cost time: 2.34291672706604
+Epoch: 1, Steps: 157 | Train Loss: 0.2822539 Vali Loss: 0.2365452 Test Loss: 0.1816762
+Validation loss decreased (inf --> 0.236545).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2440183
+	speed: 0.0271s/iter; left time: 163.3262s
+Epoch: 2 cost time: 2.3465774059295654
+Epoch: 2, Steps: 157 | Train Loss: 0.2670522 Vali Loss: 0.2348127 Test Loss: 0.1752923
+Validation loss decreased (0.236545 --> 0.234813).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.2465858
+	speed: 0.0216s/iter; left time: 126.9930s
+Epoch: 3 cost time: 1.8090033531188965
+Epoch: 3, Steps: 157 | Train Loss: 0.2649249 Vali Loss: 0.2334709 Test Loss: 0.1788872
+Validation loss decreased (0.234813 --> 0.233471).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.2538565
+	speed: 0.0223s/iter; left time: 127.0601s
+Epoch: 4 cost time: 2.1202476024627686
+Epoch: 4, Steps: 157 | Train Loss: 0.2637489 Vali Loss: 0.2340148 Test Loss: 0.1820518
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.2662862
+	speed: 0.0243s/iter; left time: 134.9977s
+Epoch: 5 cost time: 1.988966941833496
+Epoch: 5, Steps: 157 | Train Loss: 0.2634096 Vali Loss: 0.2362202 Test Loss: 0.1808866
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.3016366
+	speed: 0.0204s/iter; left time: 109.9293s
+Epoch: 6 cost time: 1.7648439407348633
+Epoch: 6, Steps: 157 | Train Loss: 0.2631732 Vali Loss: 0.2347609 Test Loss: 0.1822080
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.2582020
+	speed: 0.0209s/iter; left time: 109.5893s
+Epoch: 7 cost time: 1.9128012657165527
+Epoch: 7, Steps: 157 | Train Loss: 0.2632703 Vali Loss: 0.2357028 Test Loss: 0.1801033
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.2687995
+	speed: 0.0214s/iter; left time: 108.7858s
+Epoch: 8 cost time: 1.9876220226287842
+Epoch: 8, Steps: 157 | Train Loss: 0.2631374 Vali Loss: 0.2354438 Test Loss: 0.1801770
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_PatchTST_exchange_rate_192_seed3_PatchTST_custom_ftM_sl96_ll48_pl192_dm128_nh16_el3_dl1_df256_expand2_dc4_fc1_ebfixed_dtTrue_PatchTST_exchange_rate_192_seed3_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1326
+test shape: (1326, 192, 8) (1326, 192, 8)
+test shape: (1326, 192, 8) (1326, 192, 8)
+mse:0.1787777543067932, mae:0.30110472440719604, dtw:Not calculated
+
+--- STDERR ---
+
